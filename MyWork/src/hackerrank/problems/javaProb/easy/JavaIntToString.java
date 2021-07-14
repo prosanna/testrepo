@@ -23,8 +23,8 @@ public class JavaIntToString {
 			Scanner in = new Scanner(System.in);
 			int n = in.nextInt();
 			in.close();
-
-			String s = new String().valueOf(n);			
+			
+			String s = String.valueOf(n);			
 
 			if (n == Integer.parseInt(s)) {
 				System.out.println("Good job");
