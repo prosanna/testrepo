@@ -19,6 +19,8 @@ import java.util.Scanner;
  */
 public class JavaAnagrams {
 
+	private static int[] frequency = new int[26];
+
 	/**
 	 * @param args
 	 */
@@ -50,6 +52,33 @@ public class JavaAnagrams {
 
 		return Arrays.equals(c1, c2);
 
+	}
+	
+	/**
+	 * Alternative approach
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	static boolean isAnagramAlter(String a, String b) {
+		a = a.toLowerCase();
+		b = b.toLowerCase();
+
+		for (char c : a.toCharArray()) {
+			frequency[(int) c - 97]++;
+		}
+		for (char c : b.toCharArray()) {
+			frequency[(int) c - 97]--;
+		}
+
+		boolean anagrams = true;
+		for (int i : frequency) {
+			if (i != 0) {
+				anagrams = false;
+				break;
+			}
+		}
+		return anagrams;
 	}
 
 }
