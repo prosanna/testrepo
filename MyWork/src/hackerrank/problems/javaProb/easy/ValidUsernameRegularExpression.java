@@ -69,7 +69,13 @@ public class ValidUsernameRegularExpression {
 	 * @return
 	 */
 	private static boolean validateUserName(String s) {
-		return Pattern.matches("^[\\p{Alpha}][\\w,(_)]{7,29}", s);
+		/**
+		 * we should specify the length constraint. As the valid username consists of 8 to 30
+		 * characters inclusive, i.e., if we fix the first alphabetic character, then
+		 * following characters count should be between 7 to 29 inclusive, so our final
+		 * regular expression is as below
+		 */
+		return Pattern.matches("^[\\p{Alpha}][\\w_]{7,29}", s);
 
 	}
 
