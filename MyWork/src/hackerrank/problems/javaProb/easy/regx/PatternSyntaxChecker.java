@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hackerrank.problems.javaProb.easy;
+package hackerrank.problems.javaProb.easy.regx;
 
 import java.util.ArrayList;
 import java.util.List;

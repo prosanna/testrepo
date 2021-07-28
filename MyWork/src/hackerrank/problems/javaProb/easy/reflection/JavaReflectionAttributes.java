@@ -1,13 +1,11 @@
 /**
  * 
  */
-package hackerrank.problems.javaProb.easy;
+package hackerrank.problems.javaProb.easy.reflection;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import hackerrank.problems.javaProb.easy.reflection.Student;
 
 /**
  * 
