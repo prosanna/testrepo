@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hackerrank.problems.javaProb.easy;
+package hackerrank.problems.javaProb.easy.bigNumber;
 
 import java.math.BigInteger;
 import java.util.Scanner;
