@@ -40,7 +40,7 @@ public class JavaBigDecimal {
 			BigDecimal max = new BigDecimal(str[i]);
 			int idx = i;
 			for (int j = i+1; j < numberOfInput; j++) {
-				BigDecimal curr = new BigDecimal(str[j]);				
+				BigDecimal curr = new BigDecimal(str[j]);
 				if (curr.compareTo(max)==1) {
 					max = curr;
 					idx=j;
