@@ -23,10 +23,10 @@ public class FirstStreamExample {
 	 */
 	public static void main(String[] args) {
 		// @formatter:off
-		List<Dish> menu = Arrays.asList(new Dish("dish1", 300), 
-											new Dish("dish2", 200), 
-											new Dish("dish3", 1000),
-											new Dish("dish4", 800));
+		List<Dish> menu = Arrays.asList(new Dish("pork",false, 300,Dish.Type.MEAT), 
+											new Dish("chicken",false, 200,Dish.Type.MEAT), 
+											new Dish("salmon",false, 1000,Dish.Type.MEAT),
+											new Dish("rice",true, 800,Dish.Type.OTHER));
 // @formatter:on
 
 		// Before (Java 7 implementation):

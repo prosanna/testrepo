@@ -9,11 +9,8 @@ import static java.util.stream.Collectors.toList;
 import java.util.List;
 
 /**
- * <b>After (Java 8 implementation):</b>
  * <p>
- * Java 7 Impl we use a "garbage variable" , lowCaloricDishes. It's only purpose
- * is to act as an intermediate throwaway container. In java 8 this
- * implementation detail is pushed into the library where it belong.
+ * Different Stream implementation example
  * 
  * @author prosanna
  *
@@ -21,6 +18,11 @@ import java.util.List;
 public class Java8UtilityForFirstStreamExample {
 
 	/**
+	 * <b>After (Java 8 implementation):</b>
+	 * <p>
+	 * Java 7 Impl we use a "garbage variable" , lowCaloricDishes. It's only purpose
+	 * is to act as an intermediate throwaway container. In java 8 this
+	 * implementation detail is pushed into the library where it belong.
 	 * 
 	 * @param menu
 	 */
@@ -54,6 +56,26 @@ public class Java8UtilityForFirstStreamExample {
 		return lowCaloricDishesName; 
 // @formatter:on
 
+	}
+
+	/**
+	 * Lambda function to filter and return limited names list.
+	 * 
+	 * @param menu
+	 * @param limit
+	 * @return
+	 */
+	public static List<String> limitedHighCaloricDishName(List<Dish> menu, int limit) {
+		// @formatter:off 
+		List<String> limitedHighCaloricDishNameList = 
+				menu.stream()
+				.filter(d-> d.getCalories() > 300) // Select dishes that are greater than 300
+				.limit(limit) // Select only limited dish name
+				.map(Dish::getDishName) // Extract the names of the dishes
+				.collect(toList()); // Store the results in another list.
+// @formatter:on
+
+		return limitedHighCaloricDishNameList;
 	}
 
 }

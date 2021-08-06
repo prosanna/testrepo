@@ -9,16 +9,24 @@ package javaEightInAction.chapter4;
  */
 public class Dish {
 
-	String dishName;
-	int calories;
+	private final String dishName;
+	private final boolean vagetarian;
+	private final int calories;
+	private final Type type;
 
 	/**
-	 * @param dish
+	 * Constructor
+	 * 
+	 * @param dishName
+	 * @param vagetarian
 	 * @param calories
+	 * @param type
 	 */
-	public Dish(String name, int calories) {
-		this.dishName = name;
+	public Dish(String dishName, boolean vagetarian, int calories, Type type) {
+		this.dishName = dishName;
+		this.vagetarian = vagetarian;
 		this.calories = calories;
+		this.type = type;
 	}
 
 	/**
@@ -29,13 +37,6 @@ public class Dish {
 	}
 
 	/**
-	 * @param dishName the dishName to set
-	 */
-	public void setDishName(String dishName) {
-		this.dishName = dishName;
-	}
-
-	/**
 	 * @return the calories
 	 */
 	public int getCalories() {
@@ -43,10 +44,21 @@ public class Dish {
 	}
 
 	/**
-	 * @param calories the calories to set
+	 * @return the vagetarian
 	 */
-	public void setCalories(int calories) {
-		this.calories = calories;
+	public boolean isVagetarian() {
+		return vagetarian;
 	}
+
+	/**
+	 * @return the type
+	 */
+	public Type getType() {
+		return type;
+	}
+
+	public enum Type {
+		MEAT, FISH, OTHER
+	};
 
 }
