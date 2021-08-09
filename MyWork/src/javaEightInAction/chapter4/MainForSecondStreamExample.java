@@ -28,6 +28,9 @@ public class MainForSecondStreamExample {
 			System.out.println(string);
 		}
 
+		// Stream : Internal Iteration Example
+		Java8UtilityForFirstStreamExample.internalIterationExample(menu);
+
 	}
 
 }

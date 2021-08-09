@@ -78,4 +78,16 @@ public class Java8UtilityForFirstStreamExample {
 		return limitedHighCaloricDishNameList;
 	}
 
+	/**
+	 * Stream Internal Iteration Example
+	 * 
+	 * @param menu
+	 */
+	public static void internalIterationExample(List<Dish> menu) {
+		List<String> names = menu.stream().map(Dish::getDishName).collect(toList());
+		for (String string : names) {
+			System.out.println(string);
+		}
+	}
+
 }
