@@ -3,11 +3,11 @@
  */
 package javaEightInAction.chapter5;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.*;
+import java.util.Optional;
 
 import javaEightInAction.chapter4.Dish;
 import javaEightInAction.chapter4.Dish.Type;
@@ -103,10 +103,82 @@ public class WorkingWithStream {
 		 * number [1,4,9,16,25]
 		 */
 		List<Integer> numbers2 = Arrays.asList(1, 2, 3, 4, 5);
-		List<Integer> squrOfNumbers2 = numbers2.stream().map(num->num*num).collect(toList());
+		List<Integer> squrOfNumbers2 = numbers2.stream().map(num -> num * num).collect(toList());
 		for (Integer integer : squrOfNumbers2) {
 			System.out.println(integer.intValue());
 		}
+		/**
+		 * Quiz : Given a list [1,2,3] and a list [3,4] should return
+		 * [(1,3),(1,4),(2,3),(2,4),(3,3),(3,4)]. For simplicity, you can represent a
+		 * pair as an array with two elements.
+		 */
+		List<Integer> numList1 = Arrays.asList(1, 2, 3);
+		List<Integer> numList2 = Arrays.asList(3, 4);
+		List<int[]> pairs = numList1.stream().flatMap(i -> numList2.stream().map(j -> new int[] { i, j }))
+				.collect(toList());
+		for (int[] is : pairs) {
+			System.out.print("(");
+			for (int i = 0; i < is.length; i++) {
+
+				if (i != (is.length - 1)) {
+					System.out.print(is[i] + ",");
+				} else {
+					System.out.print(is[i]);
+				}
+
+			}
+			System.out.print(")");
+		}
+		System.out.println();
+		/**
+		 * Quiz : Extending the previous example to return only those pairs whose sum is
+		 * divisible by 3.
+		 */
+
+		// @formatter:off
+		List<int[]> pairs2 = numList1.stream()
+				.flatMap(i -> numList2.stream()
+						.filter(j -> (i + j) % 3 == 0)
+						.map(j -> new int[] { i, j }))
+				.collect(toList());
+		// @formatter:on
+		for (int[] is : pairs2) {
+			System.out.print("(");
+			for (int i = 0; i < is.length; i++) {
+
+				if (i != (is.length - 1)) {
+					System.out.print(is[i] + ",");
+				} else {
+					System.out.print(is[i]);
+				}
+
+			}
+			System.out.print(")");
+		}
+
+		System.out.println();
+		// Finding and Matching
+		/**
+		 * Finding the first element.
+		 */
+		List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
+		// @formatter:off
+		Optional<Integer> firstSquareDivisibleByThree = 
+				someNumbers.stream()
+				.map(x -> x * x)
+				.filter(x -> x % 3 == 0)
+				.findFirst();
+		// @formatter:on
+
+		firstSquareDivisibleByThree.stream().forEach(System.out::println);
+
+		// Reducing
+		List<Integer> numbers3 = Arrays.asList(1, 2, 3, 4, 5);
+		int sum = numbers3.stream().reduce(0, (a, b) -> a + b);
+		System.out.println();
+		System.out.println("Sum : " + sum);
+		int multiply = numbers3.stream().reduce(1, (a, b) -> a * b);
+		System.out.println("Multiply : " + multiply);
 
 	}
 
