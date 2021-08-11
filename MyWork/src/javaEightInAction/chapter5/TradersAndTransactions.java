@@ -104,8 +104,7 @@ public class TradersAndTransactions {
 		System.out.println("Any Milan Base Trader : " + (milanBaseTrader ? "YES" : "NO"));
 		boolean milanBaseTrader2 = transactions.stream().anyMatch(t -> t.getTrader().getCity().equals("Milan"));// Better solution
 		System.out.println("Any Milan Base Trader : " + (milanBaseTrader2 ? "YES" : "NO"));		
-		// @formatter:on
-
+// @formatter:on
 
 		System.out.println();
 
@@ -115,8 +114,7 @@ public class TradersAndTransactions {
 				.filter(t -> t.getTrader().getCity().equals("Cambridge"))
 				.map(Transaction::getValue)
 				.forEach(System.out::println);
-		// @formatter:on
-
+// @formatter:on
 
 		// What is the highest value of all the Transitions ?
 		// @formatter:off
@@ -124,9 +122,9 @@ public class TradersAndTransactions {
 				transactions.stream()
 						.map(Transaction::getValue)
 						.reduce(Integer::max);
-		// @formatter:on
+// @formatter:on
 		System.out.println(maxValue.get().intValue());
-		
+
 		// Find the transaction with the smallest value
 		// @formatter:off
 		Optional<Transaction> smallestTransaction = 
@@ -134,8 +132,6 @@ public class TradersAndTransactions {
 						.reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2);
 		smallestTransaction.stream().forEach(System.out::println);
 // @formatter:on
-
-		
 
 	}
 
