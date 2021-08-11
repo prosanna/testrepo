@@ -37,7 +37,7 @@ public class TradersAndTransactions {
 				new Transaction(mario, 2012,700),
 				new Transaction(alan, 2012,950)
 				);
-		// @formatter:on
+// @formatter:on
 
 		// Find all the transactions in 2011 and sort by value (small to high).
 		// @formatter:off
@@ -46,7 +46,7 @@ public class TradersAndTransactions {
 				.filter(i->i.getYear()==2011)
 				.sorted(comparing(Transaction::getValue))
 				.collect(toList());
-		// @formatter:on
+// @formatter:on
 
 		tr2011.stream().forEach(System.out::println);
 		System.out.println();
@@ -57,7 +57,7 @@ public class TradersAndTransactions {
 				.map(t->t.getTrader().getCity())
 				.distinct()
 				.collect(toList());
-		// @formatter:on
+// @formatter:on
 
 		cities.stream().forEach(System.out::println);
 		System.out.println();
@@ -70,7 +70,7 @@ public class TradersAndTransactions {
 				.distinct()
 				.sorted(comparing(Trader::getName))
 				.collect(toList());
-		// @formatter:on
+// @formatter:on
 		traders.stream().map(Trader::getName).forEach(System.out::println);
 		System.out.println();
 		// Return a string of all traders names sorted alphabetically.
@@ -131,7 +131,15 @@ public class TradersAndTransactions {
 				transactions.stream()
 						.reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2);
 		smallestTransaction.stream().forEach(System.out::println);
+		/**
+		 * As Stream support min and max so better solution for the above problem is as below.
+		 */
+		Optional<Transaction> smallestTransaction2 = 
+				transactions.stream()
+				.min(comparing(Transaction::getValue));
+		System.out.println(smallestTransaction2.get());
 // @formatter:on
+		System.out.println();
 
 	}
 
