@@ -60,6 +60,21 @@ public class MoreExamples {
 
 			System.out.println();
 		}
+		
+		System.out.println("===============================================");
+		
+		Map<Type, Map<Dish.CaloricLevel, List<Dish>>> dishesByTypeAndCaloricLevel = 
+				menu.stream().collect(groupingBy(Dish::getType, groupingBy(i -> {
+							if (i.getCalories() <= 400)
+								return CaloricLevel.DIET;
+							else if (i.getCalories() <= 700)
+								return CaloricLevel.NORMAL;
+							else
+								return CaloricLevel.FAT;
+						})));
+		for (Entry<Type, Map<CaloricLevel, List<Dish>>> x : dishesByTypeAndCaloricLevel.entrySet()) {
+			System.out.println(x.getKey().toString()+" : "+x.getValue());
+		}
 
 	}
 
