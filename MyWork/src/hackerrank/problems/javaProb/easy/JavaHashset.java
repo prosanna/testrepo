@@ -5,7 +5,6 @@ package hackerrank.problems.javaProb.easy;
 
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * <b>Java Hashset</b>
