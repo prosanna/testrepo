@@ -37,7 +37,7 @@ public class PairTest2 {
 
 class ArrayAlg2 {
 
-	public static <T extends Comparable & Serializable> Pair<T> minmax(T[] a) {
+	public static <T extends Comparable> Pair<T> minmax(T[] a) {
 
 		if (a == null || a.length == 0)
 			return null;
