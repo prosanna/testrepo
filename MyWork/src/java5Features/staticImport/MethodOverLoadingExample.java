@@ -15,13 +15,25 @@ public class MethodOverLoadingExample {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		test("prosanna", 90.07);
-		test("arko");
+		/*
+		 * test("prosanna",10); test("arko");
+		 */
+		
+	DirectionEnum d =	DirectionEnum.NORTH;
+	System.out.println(d.name());
+	System.out.println(DirectionEnum.valueOf("SOUTH"));
+	System.out.println(DirectionEnum.values());
+	System.out.println(d.getValue());
 
 	}
 
-	public static void test(String a, Integer b) {
-		System.out.println("Print Integer: " + a + " " + b);
+	/*
+	 * public static void test(String a, Integer b, Integer c) {
+	 * System.out.println("Print Integer: " + a + " " + b); }
+	 */
+	
+	public static void test(String a, Integer... b) {
+		System.out.println("VAR-ARGS: " + a + " " + b);
 	}
 
 	public static void test(String a, BigDecimal b) {
@@ -32,8 +44,9 @@ public class MethodOverLoadingExample {
 		System.out.println("Print Number: " + a + " " + b);
 	}
 
-	public static void test(String a) {
-		System.out.println("Print String: " + a);
-	}
+	/*
+	 * public static void test(String a) { System.out.println("Print String: " + a);
+	 * }
+	 */
 
 }
