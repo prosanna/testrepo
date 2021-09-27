@@ -68,3 +68,38 @@ class Singleton1 {
 enum Singleton2 {
 	INSTANCE
 }
+
+/**
+ * <b>Lazy initialization with Double check locking :</b>
+ * <p>
+ * In this mechanism, we overcome the overhead problem of synchronized code. In
+ * this method, getInstance is not synchronized but the block which creates
+ * instance is synchronized so that minimum number of threads have to wait and
+ * that’s only for first time.
+ * 
+ * @author prosannam
+ *
+ */
+class LazySingleton {
+	private static LazySingleton instance;
+
+	// private constructor to force use of getInstance() to create singleton object.
+	private LazySingleton() {
+
+	}
+
+	public static LazySingleton getInstance() {
+		if (instance == null) {
+			//synchronized block to remove overhead
+			synchronized (LazySingleton.class) {
+				if (instance == null) {
+					// if instance is null, initialize
+					instance = new LazySingleton();
+				}
+			}
+		}
+
+		return instance;
+
+	}
+}
