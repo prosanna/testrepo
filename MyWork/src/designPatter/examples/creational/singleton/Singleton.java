@@ -60,7 +60,7 @@ class Singleton1 {
 }
 
 /**
- * To avoid access reflection to destroy singleton property.
+ * To avoid reflection to destroy singleton property create {@link Enum} class.
  * 
  * @author prosannam
  *
