@@ -11,9 +11,36 @@ package designPatter.examples.structural;
  * incompatible interfaces.
  * <p>
  * Also known as <b>Wrapper</b>
+ * <p>
+ * JDK's collection framework offers many examples of the adapter pattern:
+ * <p>
+ * <code>List<String> musketeers = Arrays.asList("Athos", "Aramis", "Porthos");</code>
+ * <p>
+ * Here, Arrays#asList is helping us adapt an Array to a List.
+ * <p>
+ * The I/O framework also makes extensive use of this pattern. As an example,
+ * let's consider this snippet, which is mapping an InputStream to a Reader
+ * object:
+ * <p>
+ * <code>InputStreamReader input = new InputStreamReader(new FileInputStream("input.txt"));</code>
  * 
  * @author prosannam
- *
+ *         <p>
+ *         <b>Advantages:</b>
+ *         <p>
+ *         1) Helps achieve reusability and flexibility.
+ *         <p>
+ *         2) Client class is not complicated by having to use a different
+ *         interface and can use polymorphism to swap between different
+ *         implementations of adapters.
+ *         <p>
+ *         <b>Disadvantages:</b>
+ *         <p>
+ *         1) All requests are forwarded, so there is a slight increase in the
+ *         overhead.
+ *         <p>
+ *         2) Sometimes many adaptations are required along an adapter chain to
+ *         reach the type which is required.
  */
 public class Adapter {
 
