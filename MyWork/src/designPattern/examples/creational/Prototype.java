@@ -1,7 +1,7 @@
 /**
  * 
  */
-package designPatter.examples.creational;
+package designPattern.examples.creational;
 
 import java.util.HashMap;
 import java.util.Map;

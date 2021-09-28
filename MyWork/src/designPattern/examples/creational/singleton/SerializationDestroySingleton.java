@@ -1,7 +1,7 @@
 /**
  * 
  */
-package designPatter.examples.creational.singleton;
+package designPattern.examples.creational.singleton;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package designPatter.examples.structural;
+package designPattern.examples.structural;
 
 /**
  * <b>Bridge Pattern</b>

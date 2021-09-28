@@ -1,7 +1,7 @@
 /**
  * 
  */
-package designPatter.examples.creational.singleton;
+package designPattern.examples.creational.singleton;
 
 /**
  * @author prosannam

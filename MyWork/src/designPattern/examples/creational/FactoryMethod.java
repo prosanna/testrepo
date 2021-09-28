@@ -1,7 +1,7 @@
 /**
  * 
  */
-package designPatter.examples.creational;
+package designPattern.examples.creational;
 
 /**
  * <b>Factory Method Design Pattern</b>
