@@ -26,7 +26,7 @@ package designPattern.examples.structural;
  * 1) The facade pattern doesn't force us to unwanted tradeoffs, because it only
  * adds additional layers of abstraction.
  * <p>
- * 2) Sometimes the pattern can be overused in simple scenarios, which will lead
+ * 2) Sometimes the pattern can be overuse in simple scenarios, which will lead
  * to redundant implementations.
  * 
  * @author prosannam
