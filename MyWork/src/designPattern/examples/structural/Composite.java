@@ -11,7 +11,7 @@ import java.util.List;
  * <p>
  * Compose objects into tree structure to represent part-whole hierarchies.
  * Composite lets clients treat individual objects and composition of objects
- * uniformly.
+ * uniformly or in the same way.
  * 
  * @author prosannam
  *
